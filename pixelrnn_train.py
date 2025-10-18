@@ -12,6 +12,7 @@ import numpy as np
 # ------------------ Configuration ------------------
 DATA_ROOT = "dataset_A2"  # Relative path to dataset
 SAVE_DIR = "outputs"
+MODEL_FILENAME = "pixelrnn_best_model.pth"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 IMAGE_SIZE = 128

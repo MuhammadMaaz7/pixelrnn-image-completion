@@ -52,7 +52,7 @@ This will create `outputs/pixelrnn_best_model.pth` after training.
 
 ### Option 2: Use Pre-trained Model
 If you have a pre-trained model:
-1. Create the `outputs/` directory
+1. Ensure the `outputs/` directory exists
 2. Place your model file as `outputs/pixelrnn_best_model.pth`
 
 **Note**: The Streamlit app will show an error if no trained model is found. Train the model first or ensure you have a valid checkpoint in the `outputs/` directory.
