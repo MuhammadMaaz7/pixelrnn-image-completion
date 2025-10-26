@@ -84,7 +84,9 @@ def load_model():
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model = PixelRNNishUNet().to(device)
 
-        ckpt_path = os.path.join("outputs", MODEL_FILENAME)
+        # ✅ Fixed model path for Streamlit deployment
+        ckpt_path = os.path.join("training1", "outputs", MODEL_FILENAME)
+
         if os.path.exists(ckpt_path):
             ckpt = torch.load(ckpt_path, map_location=device, weights_only=False)
             model.load_state_dict(ckpt["model_state"])
@@ -96,6 +98,7 @@ def load_model():
     except Exception as e:
         st.error(f"❌ Error loading model: {str(e)}")
         return None, torch.device("cpu"), False
+
 
 model, device, model_loaded = load_model()
 
