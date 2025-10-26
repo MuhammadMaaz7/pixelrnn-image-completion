@@ -85,7 +85,7 @@ def load_model():
         model = PixelRNNishUNet().to(device)
 
         # ✅ Fixed model path for Streamlit deployment
-        ckpt_path = os.path.join("training1", "outputs", MODEL_FILENAME)
+        ckpt_path = os.path.join(os.path.dirname(__file__), "outputs", MODEL_FILENAME)
 
         if os.path.exists(ckpt_path):
             ckpt = torch.load(ckpt_path, map_location=device, weights_only=False)
